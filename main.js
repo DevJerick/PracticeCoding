@@ -19,8 +19,6 @@ document.querySelector('.addTask').onclick = function (){
 
 		`;
 
-		var count = document.querySelectorAll('.task').length;
-
 		var current_tasks = document.querySelectorAll('.delete');
 
 		for (var i = 0; i < current_tasks.length; i++) {
@@ -37,6 +35,12 @@ document.querySelector('.addTask').onclick = function (){
 		}
 
 		document.querySelector('input').value = '';
-		document.querySelector('.footer').innerHTML = `You have ${count} pending tasks`;
+
+		document.querySelector('.clear').addEventListener('click', function (){
+			document.querySelector('.tasks').innerHTML = '<div class="task"> </div>';
+		});
+
+		document.querySelector('.count').textContent = `You have ${document.querySelectorAll('.task')
+			.length} pending task'(s)`;
 	}
 };
