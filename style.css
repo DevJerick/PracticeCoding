@@ -109,9 +109,25 @@ input {
 }
 
 .footer {
-	margin-top: 10px;
-	text-align: left;
-	font-weight: 500;
-	font-size: 15px;
-	padding-left: 10px;
+	height: 40px;
+	width: 100%;
+	margin: 10px 0 10px 0;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.clear {
+	height: 100%;
+	width: 85px;
+	font-weight: 600;
+	font-size: 14px;
+	border-radius: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+	text-align: center;
+	background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+	color: #333;
+	position: absolute;
+	right: 0;
 }
