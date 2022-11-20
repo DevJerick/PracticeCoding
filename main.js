@@ -1,11 +1,10 @@
-document.querySelector('.addTask').onclick = function (){
-	if (document.querySelector('input').value.length == 0) {
-		alert('Please Enter a Task');
-	}
-	else {
-		const userInput = document.querySelector('input').value;
+document.querySelector(".addTask").onclick = function () {
+  if (document.querySelector("input").value.length == 0) {
+    alert("Please Enter a Task");
+  } else {
+    const userInput = document.querySelector("input").value;
 
-		document.querySelector('.tasks').innerHTML += `
+    document.querySelector(".tasks").innerHTML += `
 
 		<div class="task">
 		
@@ -19,28 +18,25 @@ document.querySelector('.addTask').onclick = function (){
 
 		`;
 
-		var current_tasks = document.querySelectorAll('.delete');
+    var current_tasks = document.querySelectorAll(".delete");
 
-		for (var i = 0; i < current_tasks.length; i++) {
-			current_tasks[i].onclick = function (){
-				this.parentNode.remove();
-			};
-		}
+    for (var i = 0; i < current_tasks.length; i++) {
+      current_tasks[i].onclick = function () {
+        this.parentNode.remove();
+      };
+    }
 
-		var tasks = document.querySelectorAll('.task');
-		for (i = 0; i < tasks.length; i++) {
-			tasks[i].onclick = function (){
-				this.classList.toggle('completed');
-			};
-		}
+    var tasks = document.querySelectorAll(".task");
+    for (i = 0; i < tasks.length; i++) {
+      tasks[i].onclick = function () {
+        this.classList.toggle("completed");
+      };
+    }
 
-		document.querySelector('input').value = '';
+    document.querySelector("input").value = "";
 
-		document.querySelector('.clear').addEventListener('click', function (){
-			document.querySelector('.tasks').innerHTML = '<div class="task"> </div>';
-		});
-
-		document.querySelector('.count').textContent = `You have ${document.querySelectorAll('.task')
-			.length} pending task'(s)`;
-	}
+    document.querySelector(".clear").addEventListener("click", function () {
+      document.querySelector(".tasks").innerHTML = '<div class="tasks"> </div>';
+    });
+  }
 };
